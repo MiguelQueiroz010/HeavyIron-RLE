@@ -31,6 +31,16 @@ If the next, or even the first entry of lookup index has no MSB set to 1,
 we just multiply the lookup index to 4 and repeat the RGBA entry only one time.
 
 The lookup can be of a maximum of 127 colors, and 0x1FC of length in bytes.
+
+SLUS_206.80 ELF POSITIONS:
+
+LOOKUP: 0x308C30 (0x1A0 length)
+COMPRESSED DATA: 0x308DD0 (0xCC17 length)
+
+COMPRESSED DATA POINTER(size): 0x86330(Uint16 LE)
+COMPRESSED DATA POINTER(offset): 0x86334(Uint16 LE) + 0x300080 = 0x308DD0
+
+Maybe you will need to change the whole ELF data size.
     */
 #endregion
 public class HeavyIron
@@ -130,9 +140,15 @@ public class HeavyIron
         //If lookup > 0x1FC bytes
         if(bout.Count() > 0x1FC)
         {
-         return null;
+           MessageBox.Show("The lookup table ended up too big!\nReduce texture colors and try again.","Error");
+           return null;
         }
-     
+        else{
+         if(bout.Count() > 0x1A0)
+         {
+          MessageBox.Show("The lookup table is bigger than the original size in ELF!\nReduce texture colors or continue if you will modify the\nELF variable for size.","Error");
+         }
+        }
         //Fill lookup until is at 0x1FC bytes length(Optional)
         while (bout.Count() < 0x1FC)
             bout.Add(0);
