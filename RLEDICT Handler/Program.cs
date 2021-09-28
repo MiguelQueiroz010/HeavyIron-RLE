@@ -98,11 +98,18 @@ namespace RLEDICT_Handler
                             if(!Directory.Exists(save.SelectedPath+@"\HI"))
                                 Directory.CreateDirectory(save.SelectedPath + @"\HI");
                             var outArr = Compress(decoded);
+                            if(outArr!=null){
                             File.WriteAllBytes(save.SelectedPath + @"\HI\Lookup.bin",outArr[0]);
                             File.WriteAllBytes(save.SelectedPath + @"\HI\Data.bin",outArr[1]);
                             Console.Clear();
                             Console.WriteLine("The compression was a success!\nSee the output folder: "+
                                 save.SelectedPath);
+                            }
+                            else{
+                               Console.Clear();
+                               Console.WriteLine("The compression ended up with error(s)."); 
+                               BackMenu();
+                            }
                         }
                         else
                         {
