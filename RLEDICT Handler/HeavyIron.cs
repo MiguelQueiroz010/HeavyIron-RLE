@@ -29,6 +29,8 @@ index of the color, and the next byte will be the repetition count + 2;
 
 If the next, or even the first entry of lookup index has no MSB set to 1,
 we just multiply the lookup index to 4 and repeat the RGBA entry only one time.
+
+The lookup can be of a maximum of 127 colors, and 0x1FC of length in bytes.
     */
 #endregion
 public class HeavyIron
@@ -114,6 +116,7 @@ public class HeavyIron
                 lookupLIST.Add(rgba);//Add it
         }
         #endregion
+         
         //Sort the List to Crescent Order(Optional)
         lookupLIST.Sort();
 
@@ -123,8 +126,15 @@ public class HeavyIron
             //Adds it to the output as a LittleEndian Uint32, 4 bytes
             bout.AddRange(BitConverter.GetBytes((UInt32)item));
         }
-        //Fill lookup until is at 0x1A0 bytes length(Optional)
-        while (bout.Count() < 0x1A0)
+        
+        //If lookup > 0x1FC bytes
+        if(bout.Count() > 0x1FC)
+        {
+         return null;
+        }
+     
+        //Fill lookup until is at 0x1FC bytes length(Optional)
+        while (bout.Count() < 0x1FC)
             bout.Add(0);
         #endregion
         #region COMPRESSED
