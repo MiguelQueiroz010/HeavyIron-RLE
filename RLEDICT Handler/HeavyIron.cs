@@ -40,7 +40,8 @@ COMPRESSED DATA: 0x308DD0 (0xCC17 length)
 COMPRESSED DATA POINTER(size): 0x86330(Uint16 LE)
 COMPRESSED DATA POINTER(offset): 0x86334(Uint16 LE) + 0x300080 = 0x308DD0
 
-Maybe you will need to change the whole ELF data size.
+YOU ABSOLUTELY NEED TO CHANGE THE SIZE POINTER, OTHERWISE EE WILL THROW STORE AND LOAD ERRORS.
+Maybe you will need to change the whole ELF data size if it gets bigger.
     */
 #endregion
 public class HeavyIron
