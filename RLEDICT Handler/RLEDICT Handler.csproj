@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E00C54E2-D35C-42A1-A64B-6F65A485419A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>RLEDICT_Handler</RootNamespace>
+    <AssemblyName>RLEDICT Handler</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>heavyicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HeavyIron.cs" />
+    <Compile Include="ImgLib\Common\BinaryReaderExtensions.cs" />
+    <Compile Include="ImgLib\Common\Endianness.cs" />
+    <Compile Include="ImgLib\Common\GenericDictionary.cs" />
+    <Compile Include="ImgLib\Common\ImageExtensions.cs" />
+    <Compile Include="ImgLib\Common\ImageUtils.cs" />
+    <Compile Include="ImgLib\Common\InteropUtils.cs" />
+    <Compile Include="ImgLib\Encoding\ColorCodec.cs" />
+    <Compile Include="ImgLib\Encoding\ColorCodecEndiannessDependent.cs" />
+    <Compile Include="ImgLib\Encoding\ColorComparers\ARGBColorComparer.cs" />
+    <Compile Include="ImgLib\Encoding\ImageDecoder.cs" />
+    <Compile Include="ImgLib\Encoding\ImageDecoderDirectColor.cs" />
+    <Compile Include="ImgLib\Encoding\ImageDecoderIndexed.cs" />
+    <Compile Include="ImgLib\Encoding\ImageEncoder.cs" />
+    <Compile Include="ImgLib\Encoding\ImageEncoderDirectColor.cs" />
+    <Compile Include="ImgLib\Encoding\ImageEncoderIndexed.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodec16BitLEABGR.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodec24BitRGB.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodec32BitABGR.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodec32BitARGB.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodec32BitBGRA.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodec32BitRGBA.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodecDXT1.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodecDXT1Gamecube.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodecI4.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodecI8.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodecIA4.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodecIA8.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodecRGB565.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\ColorCodecRGB5A3.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\IndexCodec4Bpp.cs" />
+    <Compile Include="ImgLib\Encoding\Implementation\IndexCodec8Bpp.cs" />
+    <Compile Include="ImgLib\Encoding\IndexCodec.cs" />
+    <Compile Include="ImgLib\Encoding\IndexCodecEndiannessDependent.cs" />
+    <Compile Include="ImgLib\Filters\Filter.cs" />
+    <Compile Include="ImgLib\Filters\FilterComposer.cs" />
+    <Compile Include="ImgLib\Filters\GamecubePlanarFilter.cs" />
+    <Compile Include="ImgLib\Filters\SwizzleFilter.cs" />
+    <Compile Include="ImgLib\Filters\TileFilter.cs" />
+    <Compile Include="ImgLib\Filters\TIM2PaletteFilter.cs" />
+    <Compile Include="ImgLib\Formats\DummyTexture.cs" />
+    <Compile Include="ImgLib\Formats\GenericTextureFormat.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\NamcoTexture.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\NamcoTexture.Serializer.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\NUTTexture.Serializer.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\PE3DATTexture.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\PE3DATTexture.Serializer.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\PE3SimpleDATTexture.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\PE3SimpleDATTexture.Serializer.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\TacticsOgreEFXTexture.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\TacticsOgreEFXTexture.Serializer.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\TIM2Texture.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\TIM2Texture.Segment.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\TIM2Texture.Serializer.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\TPLTexture.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\TPLTexture.Serializer.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\TX48Texture.cs" />
+    <Compile Include="ImgLib\Formats\Implementation\TX48Texture.Serializer.cs" />
+    <Compile Include="ImgLib\Formats\PalettedTextureFormat.cs" />
+    <Compile Include="ImgLib\Formats\Serialization\Exceptions\MetadataException.cs" />
+    <Compile Include="ImgLib\Formats\Serialization\Metadata\MetadataReader.cs" />
+    <Compile Include="ImgLib\Formats\Serialization\Metadata\MetadataReaderBase.cs" />
+    <Compile Include="ImgLib\Formats\Serialization\Metadata\MetadataWriter.cs" />
+    <Compile Include="ImgLib\Formats\Serialization\Metadata\MetadataWriterBase.cs" />
+    <Compile Include="ImgLib\Formats\Serialization\Metadata\XmlMetadataReader.cs" />
+    <Compile Include="ImgLib\Formats\Serialization\Metadata\XmlMetadataWriter.cs" />
+    <Compile Include="ImgLib\Formats\Serialization\SimpleTextureFormatSerializer.cs" />
+    <Compile Include="ImgLib\Formats\Serialization\TextureFormatSerializer.cs" />
+    <Compile Include="ImgLib\Formats\Serialization\TextureFormatSerializerProvider.cs" />
+    <Compile Include="ImgLib\Formats\TextureContainer.cs" />
+    <Compile Include="ImgLib\Formats\TextureFormat.cs" />
+    <Compile Include="ImgLib\Formats\TextureFormatBase.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="heavyicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
