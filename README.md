@@ -1,5 +1,7 @@
 # HeavyIron-RLE
 Heavy Iron Rle handle tool.
 
-## Compression/De-Compresion logic by denim and MummRa(STR Brasil).
-## Thanks the Heavy Iron Modding Community for decompiling game variables and etc.
+# Credits
+Compression/De-Compresion logic by denim and MummRa(STR Brasil).
+Using in the tool, Rainbow IMGLIB.
+Thanks the Heavy Iron Modding Community for decompiling game variables and etc.
