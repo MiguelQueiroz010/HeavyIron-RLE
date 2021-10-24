@@ -22,4 +22,4 @@ Maybe you will need to change the whole ELF data size if it gets bigger.
 # Credits
 Compression/De-Compresion logic by denim and MummRa(STR Brasil).
 Using in the tool, Rainbow IMGLIB.
-Thanks the Heavy Iron Modding Community for decompiling game variables and etc.
+Thanks the Heavy Iron Modding Community for decompiling game variables and all involved.
